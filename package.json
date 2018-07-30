@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/albatroscom/nuber-server/issues"
   },
-  "homepage": "https://github.com/albatroscom/nuber-server#readme"
+  "homepage": "https://github.com/albatroscom/nuber-server#readme",
+  "devDependencies": {
+    "@types/node": "^10.5.4",
+    "nodemon": "^1.18.3",
+    "ts-node": "^7.0.0",
+    "tslint-config-prettier": "^1.14.0",
+    "typescript": "^2.9.2"
+  }
 }
