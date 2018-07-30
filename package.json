@@ -1,0 +1,19 @@
+{
+  "name": "nuber-server",
+  "version": "1.0.0",
+  "description": "Server for the (N)Uber Clone Course on Nomad Academy, GraphQL, Typescript, NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/albatroscom/nuber-server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/albatroscom/nuber-server/issues"
+  },
+  "homepage": "https://github.com/albatroscom/nuber-server#readme"
+}
