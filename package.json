@@ -33,10 +33,13 @@
   },
   "dependencies": {
     "cors": "^2.8.4",
+    "dotenv": "^6.0.0",
     "graphql-tools": "^3.0.5",
     "graphql-yoga": "^1.14.12",
     "helmet": "^3.13.0",
     "merge-graphql-schemas": "^1.5.3",
-    "morgan": "^1.9.0"
+    "morgan": "^1.9.0",
+    "pg": "^7.4.3",
+    "typeorm": "^0.2.7"
   }
 }
