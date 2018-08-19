@@ -61,6 +61,8 @@ type User {
   lastLat: Float
   lastOrientation: Float
   chat: Chat
+  message: [Message]
+  verification: [Verification]
   createdAt: String!
   updatedAt: String
 }
@@ -75,6 +77,7 @@ type Verification {
   payload: String!
   key: String!
   used: Boolean!
+  user: User!
   createdAt: String!
   updatedAt: String
 }

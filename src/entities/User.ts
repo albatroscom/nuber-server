@@ -3,6 +3,8 @@ import { IsEmail } from 'class-validator';
 import { BaseEntity, Column, Entity, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, BeforeInsert, BeforeUpdate, ManyToOne, OneToMany  } from "typeorm";
 import Chat from './Chat';
 import Message from './Message';
+import Verification from './Verification';
+import Ride from './Ride';
 
 const BCRYPT_ROUNDS = 10;
 
@@ -59,8 +61,17 @@ class User extends BaseEntity {
     @ManyToOne( type => Chat, chat => chat.participants )
     chat: Chat;
 
-    @OneToMany( type=> Message, message => message.user )
+    @OneToMany( type => Message, message => message.user )
     messages: Message[];
+
+    @OneToMany( types => Verification, verification => verification.user )
+    verifications: Verification[];
+
+    @OneToMany( types => Ride, ride => ride.passenger)
+    ridesAsPassenger: Ride[];
+
+    @OneToMany( types => Ride, ride => ride.driver)
+    ridesAsDriver: Ride[];
 
     @CreateDateColumn() createdAt: string;
     @UpdateDateColumn() updatedAt: string;
