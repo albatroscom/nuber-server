@@ -21,7 +21,7 @@ class Verification extends BaseEntity {
     @Column({ type: "boolean", default: false })
     used: boolean;
 
-    @ManyToOne( type => User, user => user.verifications )
+    @ManyToOne( type => User, user => user.verification )
     user: User;
 
     @CreateDateColumn() createdAt: string;
