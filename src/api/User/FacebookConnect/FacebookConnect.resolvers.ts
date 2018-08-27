@@ -12,7 +12,7 @@ const resolvers: Resolvers = {
                     return {
                         ok: true,
                         error: null,
-                        token: "Coming Soon"
+                        token: "Coming Soon, already!"
                     };
                 } else {
 
@@ -26,6 +26,12 @@ const resolvers: Resolvers = {
             }
 
             try{
+                await User.create({ ...args, profilePhoto: `http://graph.facebook.com/${fbId}/picture?type=square` }).save();
+                return {
+                    ok: true,
+                    error: null,
+                    token: "Coming Soon, created!"
+                };
 
             }catch(error){
                 return {
