@@ -44,6 +44,7 @@
     "merge-graphql-schemas": "^1.5.3",
     "morgan": "^1.9.0",
     "pg": "^7.4.3",
+    "twilio": "^3.19.2",
     "typeorm": "^0.2.7"
   }
 }
