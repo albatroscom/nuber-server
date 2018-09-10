@@ -1,4 +1,4 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, BeforeInsert, ManyToOne } from 'typeorm';
+import { BaseEntity, Column, Entity, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, BeforeInsert } from 'typeorm';
 import { verificationTarget } from '../types/types';
 
 const PHONE = "PHONE";
@@ -16,6 +16,9 @@ class Verification extends BaseEntity {
 
     @Column({ type: "text" })
     key: string;
+
+    @Column({ type: "boolean", default: false })
+    verified: boolean;
 
     @CreateDateColumn() createdAt: string;
     @UpdateDateColumn() updatedAt: string;
