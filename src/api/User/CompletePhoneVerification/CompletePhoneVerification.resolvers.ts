@@ -2,6 +2,7 @@ import { Resolvers } from "../../../types/resolvers";
 import { CompletePhoneVerificationMutationArgs, CompletePhoneVerificationResponse } from "../../../types/graph";
 import Verification from "../../../entities/Verification";
 import User from "../../../entities/User";
+import createJWT from "../../../utils/createJWT";
 
 const resolvers: Resolvers = {
     Mutation: {
@@ -35,10 +36,11 @@ const resolvers: Resolvers = {
                 if(user){
                     user.verifiedPhoneNumber = true;
                     user.save();
+                    const token = createJWT(user.id);
                     return {
                         ok: true,
                         error: null,
-                        token: "Coming Soon"
+                        token
                     };
                 } else {
                     // 번호인증은 했지만 사용자 정보는 없을때, 프로필 없데이트로 유도
