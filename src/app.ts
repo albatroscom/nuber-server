@@ -3,20 +3,30 @@
  import helmet from "helmet";
  import logger from "morgan";
  import schema from "./schema";
+import decodeJWT from "./utils/decodeJWT";
  
- class App {
-     public app: GraphQLServer;
-     constructor() {
-         this.app = new GraphQLServer({
-             schema : schema
-         });
-         this.middlewares();
-     }
-     private middlewares = (): void => {
-         this.app.express.use(cors());
-         this.app.express.use(logger("dev"));
-         this.app.express.use(helmet());
-     };
+class App {
+    public app: GraphQLServer;
+    constructor() {
+        this.app = new GraphQLServer({
+            schema : schema
+        });
+        this.middlewares();
+    }
+    private middlewares = (): void => {
+        this.app.express.use(cors());
+        this.app.express.use(logger("dev"));
+        this.app.express.use(helmet());
+        this.app.express.use(this.jwt);
+    };
+    private jwt = async(req, res, next) => {
+        const token = req.get("XJWT");
+        if (token) {
+            const user = await decodeJWT(token);
+            console.log(user);
+        }
+        next();
+    };
  }
 
  export default new App().app;
