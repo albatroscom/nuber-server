@@ -4,6 +4,7 @@ import { BaseEntity, Column, Entity, PrimaryGeneratedColumn, CreateDateColumn, U
 import Chat from './Chat';
 import Message from './Message';
 import Ride from './Ride';
+import Place from './Place';
 
 const BCRYPT_ROUNDS = 10;
 
@@ -71,6 +72,9 @@ class User extends BaseEntity {
 
     @OneToMany( types => Ride, ride => ride.driver)
     ridesAsDriver: Ride[];
+
+    @OneToMany( types => Place, place => place.user)
+    places: Place[];
 
     @CreateDateColumn() createdAt: string;
     @UpdateDateColumn() updatedAt: string;
