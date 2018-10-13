@@ -14,6 +14,7 @@ const resolvers : Resolvers = {
                 }
             });
             try {
+                // Take the if (notNull.password) OUT of the try/catch
                 if(args.password !== null){
                     user.password = args.password;
                     user.save();
