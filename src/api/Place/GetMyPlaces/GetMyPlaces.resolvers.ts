@@ -29,10 +29,10 @@ const resolvers : Resolvers = {
                     ok: false,
                     error: error.message,
                     places: null
-                }
+                };
             }
         })
     }
-}
+};
 
 export default resolvers;

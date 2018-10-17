@@ -1,6 +1,4 @@
-import { Resolvers } from "../../../types/resolvers";
-
-const resolvers: Resolvers = {
+const resolvers = {
     Subscription: {
         DriversSubscription: {
             subscribe: (_, __, { pubSub }) => {

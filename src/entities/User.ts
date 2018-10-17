@@ -65,7 +65,7 @@ class User extends BaseEntity {
     chat: Chat;
 
     @OneToMany( type => Message, message => message.user )
-    message: Message[];
+    messages: Message[];
 
     @OneToMany( types => Ride, ride => ride.passenger)
     ridesAsPassenger: Ride[];

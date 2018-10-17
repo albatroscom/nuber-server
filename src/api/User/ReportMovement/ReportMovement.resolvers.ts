@@ -6,11 +6,12 @@ import cleanNullArgs from "../../../utils/cleanNullArg";
 
 const resolvers : Resolvers = {
     Mutation: {
-        ReportMovement: privateResolver( async(_, args: ReportMovementMutationArgs, { req }) : Promise<ReportMovementResponse> => {
+        ReportMovement: privateResolver( async(_, args: ReportMovementMutationArgs, { req, pubSub }) : Promise<ReportMovementResponse> => {
             const user : User = req.user;
             const notNull = cleanNullArgs(args);
             try {
                 await User.update({ id: user.id }, { ...notNull });
+                pubSub.publish("driverUpdate", { DriversSubscription: user }); // (channelname, paylaod)
                 return {
                     ok: true,
                     error: null
