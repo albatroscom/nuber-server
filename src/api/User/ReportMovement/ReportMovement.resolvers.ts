@@ -11,7 +11,9 @@ const resolvers : Resolvers = {
             const notNull = cleanNullArgs(args);
             try {
                 await User.update({ id: user.id }, { ...notNull });
-                pubSub.publish("driverUpdate", { DriversSubscription: user }); // (channelname, paylaod)
+                const updatedUser = await User.findOne({ id: user.id }); // 업데이트된 유저를 전송해야지 subscription 상태를 업데이트 할 수 있다.
+                // pubSub.publish("driverUpdate", { DriversSubscription: user }); // (channelname(필수), paylaod), subscription변경전 user를 전송한다.
+                pubSub.publish("driverUpdate", { DriversSubscription: updatedUser }); // subscription변경전 updated 된 user를 전송해야 한다.
                 return {
                     ok: true,
                     error: null
