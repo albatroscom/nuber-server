@@ -6,7 +6,7 @@ import User from './User';
 class Ride extends BaseEntity {
     @PrimaryGeneratedColumn() id: number;
 
-    @Column({type: "text", enum: ["ACCEPTED","FINISHED","CANCELED","REQUESTING","ONROUTE"], default: "ACCEPTED"})
+    @Column({type: "text", enum: ["ACCEPTED","FINISHED","CANCELED","REQUESTING","ONROUTE"], default: "REQUESTING"})
     status: rideStatus;
 
     @Column({type: "text"})

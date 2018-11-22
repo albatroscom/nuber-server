@@ -9,6 +9,9 @@
 # production
 /build
 
+# backup
+/.history
+
 # dotenv environment variables file
 .env
 

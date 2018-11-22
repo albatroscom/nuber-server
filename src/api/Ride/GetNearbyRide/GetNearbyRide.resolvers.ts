@@ -1,9 +1,9 @@
-import { Resolvers } from "../../../types/resolvers";
-import privateResolver from "../../../utils/privateResolver";
+import { Between, getRepository } from "typeorm";
+import Ride from "../../../entities/Ride";
 import User from "../../../entities/User";
 import { GetNearbyRideResponse } from "../../../types/graph";
-import { getRepository, Between } from "typeorm";
-import Ride from "../../../entities/Ride";
+import { Resolvers } from "../../../types/resolvers";
+import privateResolver from "../../../utils/privateResolver";
 
 const resolvers: Resolvers = {
     Query: {
