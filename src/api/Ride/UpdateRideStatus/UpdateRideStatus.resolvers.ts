@@ -24,6 +24,7 @@ const resolvers : Resolvers = {
                     if(ride){
                         ride.status = args.status;
                         ride.save();
+                        pubSub.publish("rideUpdate", { RideStatusSubscription: ride });
                         return {
                             ok: true,
                             error: null
