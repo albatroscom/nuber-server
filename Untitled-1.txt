@@ -1,0 +1,5 @@
+user - id : 1, albatroscom@naver.com
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTQyNTk1ODA0fQ.gOyapvBHllEwfhV7Qic7bdbdlaV2z7azPYgyxk4wrT4
+
+driver - id : 2, seonggu.baek@nexstreaming.com 
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNTQyNTk0NTYwfQ.brWod5W4Kw8ROAgAW-ZciqKyVzoPKIldekMTJJnrwF0 
